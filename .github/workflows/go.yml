@@ -32,5 +32,11 @@ jobs:
     - name: Build
       run: make dist
 
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: d-test
+        path: bin
+
     - name: Test
       run: go test -v ./...
